@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 50px 50px;
+        }
+        .row{
+            display: block;
+            height:50px;
+        }
+        .btn{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 10px;
+            color: white;
+        }
+
+        #btn1 {
+            background: #58a;
+            transform: skewX(-45deg);
+        }
+        #btn1  > div{
+            transform: skewX(45deg);
+        }
+        /**方式二利用伪元素的背景颜色**/
+        #btn2 {
+            position: relative;
+        }
+        #btn2:before{
+            content: '';
+            position: absolute;
+            top:0 ;
+            right: 0 ;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            background: #58a;
+            transform: skewX(-45deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <a id="btn1" class="btn">
+            <div >CLICK ME</div>
+        </a>
+    </div>
+
+    <div class="row">
+        <a id="btn2" class="btn">CLICK ME</a>
+    </div>
+</body>
+</html>
